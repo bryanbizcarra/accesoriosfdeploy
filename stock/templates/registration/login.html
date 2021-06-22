@@ -1,0 +1,176 @@
+
+{% comment %} <!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{%static 'css/login.css'%}">
+    <title>Ingresar</title>
+    
+
+<body>
+
+    <h2>Ingresar al sistema</h2>
+
+    <form action="" method="post">
+        {%csrf_token%}
+        <div class="imgcontainer">
+            <img src="{% static 'img/logotipo.png' %}" class="avatar">
+        </div>
+
+        <div class="container">
+            <label for="uname"><b>Usuario</b></label>
+            {{form.username}}
+
+            <label for="psw"><b>Contraseña</b></label>
+            {{form.password}}
+
+            <button type="submit">Ingresar</button>
+            {{form.errors}}
+    </form>
+
+
+<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+				<div class="login100-pic js-tilt" data-tilt>
+					<img src="{%static 'img/logotipo.png'%}" alt="IMG">
+				</div>
+
+				<form action="" method="post" class="login100-form validate-form">
+                {%csrf_token%}
+					<span class="login100-form-title">
+						Ingresar
+					</span>
+
+					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+						
+                        <h3>Nombre de usuario</h3>
+                        <span class="username">{{form.username}}</span>
+						<span class="focus-input100"></span>
+						
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate = "Password is required">
+						
+                        <h3>Contraseña</h3>
+                        <span>{{form.password}}</span>
+						<span class="focus-input100"></span>
+					</div>
+
+					<div class="container-login100-form-btn">
+						<button type="submit" class="login100-form-btn">
+							Ingresar
+						</button>
+                        {{form.errors}}
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+</body>
+
+</html> {% endcomment %}
+{% load static %}
+
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Acceder</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/png" href="{%static 'assets/images/icon/favicon.ico'%}">
+    <link rel="stylesheet" href="{%static 'assets/css/bootstrap.min.css'%}">
+    <link rel="stylesheet" href="{%static 'assets/css/font-awesome.min.css'%}">
+    <link rel="stylesheet" href="{%static 'assets/css/themify-icons.css'%}">
+    <link rel="stylesheet" href="{%static 'assets/css/metisMenu.css'%}">
+    <link rel="stylesheet" href="{%static 'assets/css/owl.carousel.min.css'%}">
+    <link rel="stylesheet" href="{%static 'assets/css/slicknav.min.css'%}">
+    <!-- amchart css -->
+    <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
+    <!-- others css -->
+    <link rel="stylesheet" href="{%static 'assets/css/typography.css'%}">
+    <link rel="stylesheet" href="{%static 'assets/css/default-css.css'%">
+    <link rel="stylesheet" href="{%static 'assets/css/styles.css'%}">
+    <link rel="stylesheet" href="{%static 'assets/css/responsive.css'%}">
+    <!-- modernizr css -->
+    <script src="{%static 'assets/js/vendor/modernizr-2.8.3.min.js'%}"></script>
+</head>
+
+<body>
+    <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <!-- preloader area start -->
+    <div id="preloader">
+        <div class="loader"></div>
+    </div>
+    <!-- preloader area end -->
+    <!-- login area start -->
+    <div class="login-area login-s2">
+        <div class="container">
+            <div class="login-box ptb--100">
+                <form action="" method="post">
+				{%csrf_token%}
+                    <div class="login-form-head">
+                        <h4>Ingresar</h4>
+                        <p>Hola, debes iniciar sesión para administrar Accesorios Ferreira</p>
+                    </div>
+                    <div class="login-form-body">
+                        <div class="form-gp">
+                            <label for="exampleInputEmail1">Nombre de usuario</label>
+                            {{form.username}}
+							
+                            {% comment %} <i class="ti-email"></i> {% endcomment %}
+                            <div class="text-danger"></div>
+                        </div>
+                        <div class="form-gp">
+                            <label for="exampleInputPassword1">Contraseña</label>
+                            {{form.password}}
+                            {% comment %} <i class="ti-lock"></i> {% endcomment %}
+                            <div class="text-danger"></div>
+                        </div>
+                        {% comment %} <div class="row mb-4 rmber-area">
+                            <div class="col-6">
+                                <div class="custom-control custom-checkbox mr-sm-2">
+                                    <input type="checkbox" class="custom-control-input" id="customControlAutosizing">
+                                    <label class="custom-control-label" for="customControlAutosizing">Remember Me</label>
+                                </div>
+                            </div>
+                            <div class="col-6 text-right">
+                                <a href="#">Forgot Password?</a>
+                            </div>
+                        </div> {% endcomment %}
+                        <div class="submit-btn-area">
+                            <button id="form_submit" type="submit">Ingresar <i class="ti-arrow-right"></i></button>
+                        </div>
+						{{form.errors}}
+                        {% comment %} <div class="form-footer text-center mt-5">
+                            <p class="text-muted">Don't have an account? <a href="register.html">Sign up</a></p>
+                        </div> {% endcomment %}
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- login area end -->
+
+    <!-- jquery latest version -->
+    <script src="{%static 'assets/js/vendor/jquery-2.2.4.min.js'%}"></script>
+    <!-- bootstrap 4 js -->
+    <script src="{%static 'assets/js/popper.min.js'%}"></script>
+    <script src="{%static 'assets/js/bootstrap.min.js'%}"></script>
+    <script src="{%static 'assets/js/owl.carousel.min.js'%}"></script>
+    <script src="{%static 'assets/js/metisMenu.min.js'%}"></script>
+    <script src="{%static 'assets/js/jquery.slimscroll.min.js'%}"></script>
+    <script src="{%static 'assets/js/jquery.slicknav.min.js'%}"></script>
+    
+    <!-- others plugins -->
+    <script src="{%static 'assets/js/plugins.js'%}"></script>
+    <script src="{%static 'assets/js/scripts.js'%}"></script>
+</body>
+
+</html>

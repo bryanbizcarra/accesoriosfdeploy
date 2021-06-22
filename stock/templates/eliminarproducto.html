@@ -1,0 +1,16 @@
+{%load static%}
+<title>Eliminar producto</title>
+<link rel="stylesheet" href="{%static 'css/eliminar.css'%}">
+
+<div class="logo">
+    <img src="{%static 'img/logotipo.png'%}"></img>
+</div>
+
+<div class="container">
+    <form method="POST">
+        {% csrf_token %}
+        <h3>Desea eliminar definitivamente el producto {{object.nombre_producto}}</h3>
+        <button type="submit">Si, eliminar</button>
+        <a href='/'>Cancelar</a>
+    </form>
+</div>

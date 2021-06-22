@@ -1,0 +1,17 @@
+{% load static %}
+<title>Agregar producto</title>
+<link rel="stylesheet" href="{%static 'css/formulario.css'%}">
+
+<div class="logocontainer">
+    <a href="/"><img a href="" class="logo" src="{%static 'img/logotipo.png'%}"></a>
+</div>
+
+<div class="container">
+
+    <form method="POST">
+        {{ form.as_p }}
+        {% csrf_token %}
+        <button type="submit">Agregar Productos</button>
+    </form>
+
+</div>
