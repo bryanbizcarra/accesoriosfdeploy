@@ -78,8 +78,12 @@ WSGI_APPLICATION = 'accesoriosferreira.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'ddmrvl7j19vu8v',
+        'USER': 'swpjjvxnlfhuxv',
+        'PASSWORD': 'da4042fa4d291ebe7500c4a766c97b02d1678bbe79abb9ccdcaed1b26965be6b',
+        'HOST': 'ec2-54-225-190-241.compute-1.amazonaws.com',
+        'PORT': '5432',
     }
 }
 
