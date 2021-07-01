@@ -390,21 +390,33 @@
                                             </tr>
                                         </thead>
                                         <tbody>
+                                        
                                             {% if object_list %} 
                                             {% for i in object_list %}
-                                                
                                                 <tr>
 
                                                     <td>{{i.código_producto}}</td>
                                                     <td>{{i.nombre_producto}}</td>
                                                     <td>{{i.cantidad_productos}}</td>
                                                     <td>{{i.fecha}}</td>
-                                                    <td>{{i.productos_ok}}</td>
+                                                    <td>
+                                                    {% if i.productos_ok == True %}
+                                                        Si
+                                                     {% else %}
+                                                        No 
+                                                    {% endif %}
+                                                    </td>
                                                     <td>{{i.cantidad_productos_ok}}</td>
                                                     <td>{{i.merma}}</td>
                                                     <td>${{i.precio_compra}}</td>
                                                     <td>${{i.total_compra}}</td>
-                                                    <td>{{i.inversion_ok}}</td>
+                                                    <td>
+                                                    {% if i.inversion_ok == True %}
+                                                        Si 
+                                                    {% else %}
+                                                        No
+                                                    {% endif %}
+                                                    </td>
                                                     <td>${{i.perdida}}</td>
                                                     <td>${{i.precio_unitario}}</td>
                                                     <td>{{i.nombre_local}}</td>
@@ -415,6 +427,7 @@
                                                     </td>
 
                                                 </tr>
+                                               
                                             {% endfor %}
                                             {% endif %}
                                         </tbody>

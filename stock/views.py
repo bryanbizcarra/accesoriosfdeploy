@@ -9,13 +9,11 @@ class index(ListView):
     model = Producto
     template_name = 'datatable.html'
 
-
 class CrearProductos(CreateView):
     model = Producto
     form_class = ProductosFormulario
     template_name = 'añadirproducto.html'
     success_url = '/'
-
 
 class EditarProductos(UpdateView):
     model = Producto
